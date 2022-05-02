@@ -1,0 +1,81 @@
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import moment from 'moment'
+
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import Paper from '@mui/material/Paper'
+import InputBase from '@mui/material/InputBase'
+import IconButton from '@mui/material/IconButton'
+
+import SearchIcon from '@mui/icons-material/Search'
+
+import UserCard from '../../components/UserCard'
+
+const List = () => {
+    const [users, setUsers] = useState([])
+    const [valueSearch, setValueSearch] = useState('')
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/api/users/${valueSearch}`)
+            .then(response => {
+                const data = response.data
+                setUsers(data)
+            })
+    }, [users, valueSearch])
+
+    const handleRemoveUser = id => {
+        axios.delete(`http://localhost:8080/api/users/${id}`)
+            .then(() => {
+                const newUsersState = users.filter(user => user.id !== id)
+                setUsers(newUsersState)
+            })
+    }   
+
+    return (
+        <>
+            <Typography variant="h4" gutterBottom component="div" sx={{ textAlign: 'center' }}>
+                Lista de Usuários
+            </Typography>
+
+            <Grid container spacing={3}>   
+                <Grid item xs={12}>  
+                    <Paper                        
+                        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '97%' }}
+                    >                
+                        <InputBase
+                            name='search'
+                            autoFocus
+                            sx={{ ml: 1, flex: 1 }}
+                            placeholder="Pesquise pelo nome"                            
+                            value={valueSearch}
+                            onChange={e => setValueSearch(e.target.value)}
+                            
+                        />
+                        <IconButton type="submit" sx={{ p: '10px' }}>
+                            <SearchIcon />
+                        </IconButton>                        
+                    </Paper>
+                </Grid>
+
+                {
+                    
+                    users.map(user => (                        
+                        <Grid item xs={12} md={4}>
+                            <UserCard 
+                                name={user.name}
+                                email={user.email}
+                                birthDate={moment.utc(user.birthDate).format('DD/MM/YYYY')}
+                                id={user._id}
+                                onRemoveUser={handleRemoveUser}
+                            />
+                        </Grid>
+                    ))
+                }
+            </Grid>            
+        </>
+    )
+}
+  
+export default List
+  

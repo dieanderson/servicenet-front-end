@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# ServiceNet Front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sistema desenvolvido como desafio do processo seletivo da empresa ServiceNet. Esta aplicação front-end consome os endpoints da 
+[ServiceNet-API](https://github.com/dieanderson/servicenet-api) e obedece as regras de negócio solicitadas, foi desenvolvido em 
+JavaScript utilizando React.js
 
-## Available Scripts
+### Regras de Negócio:
 
-In the project directory, you can run:
+- Estrutura do usuário: Matrícula(gerada pelo sistema), Nome, Data de Nascimento, E-mail, Senha.
+- Realizar o cadastro, atualização, remoção e listagem dos usuários utilizando a API criada.
+- Listagem de usuários deve permitir filtrar por nome.
+- Listagem deve disponibilizar botões de editar e remover.
+- Ao clicar no botão editar deve exibir um modal com informações para edição dos dados.
+- Senha deve conter algum tipo de segurança em sua persistência.
 
-### `npm start`
+## 🚀 Começando
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e testes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📋 Pré-requisitos
 
-### `npm test`
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[React.js](https://pt-br.reactjs.org/), [Node.js](https://nodejs.org/). 
 
-### `npm run build`
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔧 Instalação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clonar o repositório utilizando o seguinte código:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git clone git@github.com:dieanderson/servicenet-front-end.git
+```
 
-### `npm run eject`
+Acessar a pasta do projeto:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+cd servicenet-front-end
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Instalar as dependências:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Executando a aplicação
 
-## Learn More
+Após as dependências instaladas, iniciar o servidor da API de acordo com as instruções do repositório:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[ServiceNet-API](https://github.com/dieanderson/servicenet-api) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Executar a aplicação:
 
-### Code Splitting
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+O navegador padrão deve abrir automaticamente, caso não abra acessar o seguinte endereço:
 
-### Analyzing the Bundle Size
+```
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🛠️ Tecnologias utilizadas
 
-### Making a Progressive Web App
+As seguintes ferramentas foram usadas na construção do projeto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [React.js](https://pt-br.reactjs.org/)
+- [Node.js](https://nodejs.org/)
+- [Material UI](https://mui.com/pt/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Moment](https://momentjs.com/)
+- [React-router-dom](https://www.npmjs.com/package/react-router-dom)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
