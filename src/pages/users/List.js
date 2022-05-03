@@ -17,13 +17,23 @@ const List = () => {
     const [valueSearch, setValueSearch] = useState('')
 
     useEffect(() => {
+        handleSearchUser()    
+    }, [])
+
+    const handleSearchUser = () => {
         //axios.get(`http://localhost:8080/api/users/${valueSearch}`)
         axios.get(`https://servicenet-api.herokuapp.com/api/users/${valueSearch}`)
             .then(response => {
                 const data = response.data
                 setUsers(data)
             })
-    }, [users, valueSearch])
+    }
+
+    const handleSearchKeyDown = e => {
+        if (e.keyCode === 13) {
+            handleSearchUser()
+        }
+    }
 
     const handleRemoveUser = id => {
         //axios.delete(`http://localhost:8080/api/users/${id}`)
@@ -32,8 +42,8 @@ const List = () => {
                 const newUsersState = users.filter(user => user.id !== id)
                 setUsers(newUsersState)
             })
-    }   
-
+    }
+    
     return (
         <>
             <Typography variant="h4" gutterBottom component="div" sx={{ textAlign: 'center' }}>
@@ -52,16 +62,15 @@ const List = () => {
                             placeholder="Pesquise pelo nome"                            
                             value={valueSearch}
                             onChange={e => setValueSearch(e.target.value)}
-                            
+                            onKeyDown={handleSearchKeyDown}
                         />
-                        <IconButton type="submit" sx={{ p: '10px' }}>
+                        <IconButton type="submit" sx={{ p: '10px' }} onClick={handleSearchUser}>
                             <SearchIcon />
                         </IconButton>                        
                     </Paper>
                 </Grid>
 
-                {
-                    
+                {                    
                     users.map(user => (                        
                         <Grid item xs={12} md={4}>
                             <UserCard 

@@ -24,6 +24,7 @@ const UserCard = ({
     const [openModalConfirm, setOpenModalConfirm] = useState(false)
     const [openModalEdit, setOpenModalEdit] = useState(false)
 
+
     const handleToggleOpenModalConfirm = () => {
         setOpenModalConfirm(!openModalConfirm)
     }
@@ -87,13 +88,13 @@ const UserCard = ({
                 message={name}
             />
             <ModalEdit
-                name={name}
-                email={email}
-                birthDate={birthDate}
-                id={id} 
                 open={openModalEdit}
                 onClose={handleToggleOpenModalEdit}
-                onConfirm={handleEditModal}                
+                onConfirm={handleEditModal}
+                name={name}
+                email={email}
+                birthDate={birthDate} 
+                id={id}           
             />
         </>
     )

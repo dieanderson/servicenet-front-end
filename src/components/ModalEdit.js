@@ -76,8 +76,7 @@ const ModalEdit = ({ open, onClose, onConfirm, name, email, birthDate, id }) => 
             name: form.name.value,            
             birthDate: new Date(`${YYYY}-${MM}-${DD}`),
             email: form.email.value,
-        }).then(() => {
-            navigate('/users')
+        }).then(() => {            
             onConfirm()
         })
     }
