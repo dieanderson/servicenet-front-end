@@ -17,7 +17,8 @@ const List = () => {
     const [valueSearch, setValueSearch] = useState('')
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/users/${valueSearch}`)
+        //axios.get(`http://localhost:8080/api/users/${valueSearch}`)
+        axios.get(`https://servicenet-api.herokuapp.com/api/users/${valueSearch}`)
             .then(response => {
                 const data = response.data
                 setUsers(data)
@@ -25,7 +26,8 @@ const List = () => {
     }, [users, valueSearch])
 
     const handleRemoveUser = id => {
-        axios.delete(`http://localhost:8080/api/users/${id}`)
+        //axios.delete(`http://localhost:8080/api/users/${id}`)
+        axios.delete(`https://servicenet-api.herokuapp.com/api/users/${id}`)
             .then(() => {
                 const newUsersState = users.filter(user => user.id !== id)
                 setUsers(newUsersState)

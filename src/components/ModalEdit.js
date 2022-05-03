@@ -71,7 +71,8 @@ const ModalEdit = ({ open, onClose, onConfirm, name, email, birthDate, id }) => 
 
         const [DD, MM, YYYY] = form.birthDate.value.split('/')
     
-        axios.put(`http://localhost:8080/api/users/${id}`, {
+        //axios.put(`http://localhost:8080/api/users/${id}`, {
+        axios.put(`https://servicenet-api.herokuapp.com/api/users/${id}`, {
             name: form.name.value,            
             birthDate: new Date(`${YYYY}-${MM}-${DD}`),
             email: form.email.value,
