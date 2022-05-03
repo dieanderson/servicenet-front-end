@@ -105,8 +105,8 @@ const Register = () => {
         
         const [DD, MM, YYYY] = form.birthDate.value.split('/')
     
-        //axios.post('http://localhost:8080/api/users', {
-        axios.post(`https://servicenet-api.herokuapp.com/api/users`, {
+        axios.post('http://localhost:8080/api/users', {
+        //axios.post(`https://servicenet-api.herokuapp.com/api/users`, {
             name: form.name.value,            
             birthDate: new Date(`${YYYY}-${MM}-${DD}`),
             email: form.email.value,
