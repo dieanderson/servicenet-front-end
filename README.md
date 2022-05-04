@@ -74,3 +74,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Moment](https://momentjs.com/)
 - [React-router-dom](https://www.npmjs.com/package/react-router-dom)
 
+## Imagens da Aplicação em funcionamento
+
+<img width="1440" alt="Captura de Tela 2022-05-04 às 10 50 57" src="https://user-images.githubusercontent.com/85021274/166696192-2b8330b3-28e6-4f0b-92a5-4c8843987e46.png">
+<img width="1440" alt="Captura de Tela 2022-05-04 às 10 51 13" src="https://user-images.githubusercontent.com/85021274/166696211-9c0bb90d-9b86-4399-b532-03ec1ce25708.png">
+<img width="1440" alt="Captura de Tela 2022-05-04 às 10 51 27" src="https://user-images.githubusercontent.com/85021274/166696219-45889cf9-83a3-44d8-823e-d1ce58a7adc4.png">
+<img width="1440" alt="Captura de Tela 2022-05-04 às 10 51 36" src="https://user-images.githubusercontent.com/85021274/166696225-f5f9c53e-1664-47bc-b128-7a80a057decc.png">
+<img width="1440" alt="Captura de Tela 2022-05-04 às 10 52 01" src="https://user-images.githubusercontent.com/85021274/166696229-9c5fa795-d773-49ef-a0a2-cd2bec4a38a5.png">
+
