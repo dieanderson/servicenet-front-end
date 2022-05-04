@@ -22,8 +22,8 @@ const List = () => {
 
     
     const handleSearchUser = () => {
-        //axios.get(`http://localhost:8080/api/users/${valueSearch}`)
-        axios.get(`https://servicenet-api.herokuapp.com/api/users/${valueSearch}`)
+        axios.get(`http://localhost:8080/api/users/${valueSearch}`)
+        //axios.get(`https://servicenet-api.herokuapp.com/api/users/${valueSearch}`)
             .then(response => {
                 const data = response.data
                 setUsers(data)
@@ -37,8 +37,8 @@ const List = () => {
     }
 
     const handleRemoveUser = id => {
-        //axios.delete(`http://localhost:8080/api/users/${id}`)
-        axios.delete(`https://servicenet-api.herokuapp.com/api/users/${id}`)
+        axios.delete(`http://localhost:8080/api/users/${id}`)
+        //axios.delete(`https://servicenet-api.herokuapp.com/api/users/${id}`)
             .then(() => {
                 const newUsersState = users.filter(user => user.id !== id)
                 setUsers(newUsersState)
