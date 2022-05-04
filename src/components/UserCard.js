@@ -20,6 +20,7 @@ const UserCard = ({
     birthDate,
     id,
     onRemoveUser,
+    handleSearchUser,
 }) => {
     const [openModalConfirm, setOpenModalConfirm] = useState(false)
     const [openModalEdit, setOpenModalEdit] = useState(false)
@@ -94,7 +95,8 @@ const UserCard = ({
                 name={name}
                 email={email}
                 birthDate={birthDate} 
-                id={id}           
+                id={id}
+                handleSearchUser={handleSearchUser}           
             />
         </>
     )

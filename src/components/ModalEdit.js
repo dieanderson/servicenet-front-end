@@ -9,7 +9,7 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 
-const ModalEdit = ({ open, onClose, onConfirm, name, email, birthDate, id }) => {
+const ModalEdit = ({ open, onClose, onConfirm, name, email, birthDate, id, handleSearchUser }) => {
 
     const [DD, MM, YYYY] = birthDate.split('/')
     const navigate = useNavigate()
@@ -78,6 +78,7 @@ const ModalEdit = ({ open, onClose, onConfirm, name, email, birthDate, id }) => 
             email: form.email.value,
         }).then(() => {            
             onConfirm()
+            handleSearchUser()
         })
     }
 

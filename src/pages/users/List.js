@@ -80,6 +80,7 @@ const List = () => {
                                 birthDate={moment.utc(user.birthDate).format('DD/MM/YYYY')}
                                 id={user._id}
                                 onRemoveUser={handleRemoveUser}
+                                handleSearchUser={handleSearchUser}
                             />
                         </Grid>
                     ))
