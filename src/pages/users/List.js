@@ -42,7 +42,9 @@ const List = () => {
             .then(() => {
                 const newUsersState = users.filter(user => user.id !== id)
                 setUsers(newUsersState)
+                handleSearchUser()
             })
+        
     }
     
     return (
