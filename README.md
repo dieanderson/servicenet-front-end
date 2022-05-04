@@ -4,6 +4,8 @@ Sistema desenvolvido como desafio do processo seletivo da empresa ServiceNet. Es
 [ServiceNet-API](https://github.com/dieanderson/servicenet-api) e obedece as regras de negócio solicitadas, foi desenvolvido em 
 JavaScript utilizando React.js
 
+[Clique aqui para acessar o projeto em produção](https://level-test.surge.sh/)
+
 ### Regras de Negócio:
 
 - Estrutura do usuário: Matrícula(gerada pelo sistema), Nome, Data de Nascimento, E-mail, Senha.
@@ -21,7 +23,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
-[React.js](https://pt-br.reactjs.org/), [Node.js](https://nodejs.org/). 
+[Node.js](https://nodejs.org/). 
 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
@@ -12,7 +11,6 @@ import DialogTitle from '@mui/material/DialogTitle'
 const ModalEdit = ({ open, onClose, onConfirm, name, email, birthDate, id, handleSearchUser }) => {
 
     const [DD, MM, YYYY] = birthDate.split('/')
-    const navigate = useNavigate()
   
     const [form, setForm] = useState({
         name: { value: name, error: false},

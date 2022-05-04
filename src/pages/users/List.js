@@ -18,7 +18,7 @@ const List = () => {
 
     useEffect(() => {
         handleSearchUser() 
-    }, [])
+    })
 
     
     const handleSearchUser = () => {
