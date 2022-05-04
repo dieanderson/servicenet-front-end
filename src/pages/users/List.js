@@ -17,9 +17,10 @@ const List = () => {
     const [valueSearch, setValueSearch] = useState('')
 
     useEffect(() => {
-        handleSearchUser()    
+        handleSearchUser() 
     }, [])
 
+    
     const handleSearchUser = () => {
         axios.get(`http://localhost:8080/api/users/${valueSearch}`)
         //axios.get(`https://servicenet-api.herokuapp.com/api/users/${valueSearch}`)
@@ -72,8 +73,8 @@ const List = () => {
 
                 {                    
                     users.map(user => (                        
-                        <Grid item xs={12} md={4}>
-                            <UserCard 
+                        <Grid item xs={12} md={4} key={user._id}>
+                            <UserCard                                 
                                 name={user.name}
                                 email={user.email}
                                 birthDate={moment.utc(user.birthDate).format('DD/MM/YYYY')}
