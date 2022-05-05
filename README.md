@@ -75,6 +75,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Axios](https://axios-http.com/ptbr/docs/intro)
 - [Moment](https://momentjs.com/)
 - [React-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [React-device-detect](https://www.npmjs.com/package/react-device-detect)
 
 ## Imagens da Aplicação em funcionamento
 

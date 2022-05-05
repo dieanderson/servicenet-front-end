@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { isSafari } from 'react-device-detect'
 
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
@@ -27,7 +28,7 @@ const Register = () => {
             },
         })
     }
-
+   
     const handleRegisterButton = () => {
         let hasError = false
         let newFormState = {
@@ -103,12 +104,18 @@ const Register = () => {
             return setForm(newFormState)
         }
         
-        const [DD, MM, YYYY] = form.birthDate.value.split('/')
+        let birthDateValid = ''
+        if (!isSafari) {
+            const [DD, MM, YYYY] = form.birthDate.value.split('/')
+            birthDateValid = new Date(`${YYYY}-${MM}-${DD}`)
+        } else {
+            birthDateValid = new Date(form.birthDate.value)
+        }
     
         axios.post('http://localhost:8080/api/users', {
         //axios.post(`https://servicenet-api.herokuapp.com/api/users`, {
             name: form.name.value,            
-            birthDate: new Date(`${YYYY}-${MM}-${DD}`),
+            birthDate: birthDateValid,
             email: form.email.value,
             password: form.password.value
         }).then(() => {

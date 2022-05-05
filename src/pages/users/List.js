@@ -19,7 +19,6 @@ const List = () => {
     useEffect(() => {
         handleSearchUser() 
     })
-
     
     const handleSearchUser = () => {
         axios.get(`http://localhost:8080/api/users/${valueSearch}`)

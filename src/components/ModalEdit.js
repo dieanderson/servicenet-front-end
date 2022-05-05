@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { isSafari } from 'react-device-detect'
 
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
@@ -67,12 +68,18 @@ const ModalEdit = ({ open, onClose, onConfirm, name, email, birthDate, id, handl
             return setForm(newFormState)
         }
 
-        const [DD, MM, YYYY] = form.birthDate.value.split('/')
+        let birthDateValid = ''
+        if (!isSafari) {
+            const [DD, MM, YYYY] = form.birthDate.value.split('/')
+            birthDateValid = new Date(`${YYYY}-${MM}-${DD}`)
+        } else {
+            birthDateValid = new Date(form.birthDate.value)
+        }
     
         axios.put(`http://localhost:8080/api/users/${id}`, {
         //axios.put(`https://servicenet-api.herokuapp.com/api/users/${id}`, {
             name: form.name.value,            
-            birthDate: new Date(`${YYYY}-${MM}-${DD}`),
+            birthDate: birthDateValid,
             email: form.email.value,
         }).then(() => {            
             onConfirm()
